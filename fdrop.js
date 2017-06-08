@@ -13,7 +13,7 @@
 			style.opacity = old_opacity;
 		}
 
-		// for drag/drop to work, element MUST have ondragover and ondrop defined 
+		// for drag/drop to work, element MUST have ondragover AND ondrop defined 
 		element.ondragover = function(evt) {
 			evt.preventDefault();			// required: ondragover MUST call this.
 		}
