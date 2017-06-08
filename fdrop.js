@@ -24,10 +24,21 @@
 			cb(files, evt);
 		}
 
-	}
+	};
+
+	// FDrop.mk_data_url(files[0], , cb)
+	var mk_data_url = function(f, cb) {
+		var reader = new FileReader();
+		reader.onload = function() {
+			var data = reader.result;
+			cb(data);
+		};
+		reader.readAsDataURL(f);
+	};
 
 	FDrop = {
 		attach: attach,
+		mk_data_url: mk_data_url,
 	}
 	
 })();
