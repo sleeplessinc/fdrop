@@ -10,7 +10,8 @@
 			style.opacity = "0.5";
 		}
 		element.ondragleave = function(evt) {
-			style.opacity = old_opacity;
+			if(evt.target === element)
+				style.opacity = old_opacity;
 		}
 
 		// for drag/drop to work, element MUST have ondragover AND ondrop defined 
