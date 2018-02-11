@@ -1,0 +1,27 @@
+<html>
+<body>
+<script src="./fdrop.js"></script>
+
+<br>
+<br>
+<br>
+<center id=droptarget>
+	DROP FILES HERE
+</center>
+
+<script>
+	function elem(id) { return document.getElementById(id); };
+	function log(s) { console.log(s); };
+
+	var dt = elem("droptarget");
+	FDrop.attach(dt, function(files, evt) {
+		files = files;
+		var f = files[0];
+		FDrop.mk_data_url(f, function(u) {
+			dt.innerHTML = "<img height=100 src='"+u+"'><br>name="+f.name+" type="+f.type+" size="+f.size;
+		});
+
+	});
+
+
+</script>
